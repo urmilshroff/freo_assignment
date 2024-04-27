@@ -11,13 +11,15 @@ class HomePage extends ConsumerWidget {
     return Scaffold(
       appBar: EasySearchBar(
         title: const Text('WikiSearch'),
-        onSearch: (val) async {
-          debugPrint(val);
+        debounceDuration: Duration(seconds: 1),
+        onSearch: (query) => debugPrint(query),
+        asyncSuggestions: (query) async {
+          final searchResults =
+              await ref.read(wikiProvider).getSearchResults(query);
+          final searchResultsTitles = List.generate(
+              searchResults.length, (i) => searchResults[i].title);
+          return searchResultsTitles;
         },
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () async =>
-            await ref.read(wikiProvider).getSearchResults('hello_world'),
       ),
     );
   }

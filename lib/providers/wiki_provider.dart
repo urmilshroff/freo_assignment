@@ -10,7 +10,7 @@ class WikiManager {
 
   WikiManager(this.ref);
 
-  Future<dynamic> getSearchResults(String search) async {
+  Future<List<SearchResultModel>> getSearchResults(String query) async {
     final api = 'https://en.wikipedia.org/w/api.php?';
 
     try {
@@ -23,7 +23,7 @@ class WikiManager {
           'generator': 'search',
           'gsrnamespace': 0,
           'gsrlimit': 5,
-          'gsrsearch': search,
+          'gsrsearch': query,
         },
       );
 
