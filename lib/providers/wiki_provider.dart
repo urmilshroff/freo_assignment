@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
-import 'package:freo_assignment/models/wiki_model.dart';
+import 'package:freo_assignment/models/search_result_model.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 final wikiProvider = Provider((ref) => WikiManager(ref));

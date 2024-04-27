@@ -1,10 +1,11 @@
 import 'package:easy_search_bar/easy_search_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:freo_assignment/pages/article_page.dart';
 import 'package:freo_assignment/providers/wiki_provider.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class HomePage extends ConsumerWidget {
-  HomePage({super.key});
+class SearchPage extends ConsumerWidget {
+  SearchPage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -20,6 +21,12 @@ class HomePage extends ConsumerWidget {
               searchResults.length, (i) => searchResults[i].title);
           return searchResultsTitles;
         },
+        onSuggestionTap: (articleName) => Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ArticlePage(articleName: articleName),
+          ),
+        ),
       ),
     );
   }

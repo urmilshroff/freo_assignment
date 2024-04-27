@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:freo_assignment/pages/home_page.dart';
+import 'package:freo_assignment/pages/search_page.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 void main() {
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: HomePage(),
+      home: SearchPage(),
     );
   }
 }
