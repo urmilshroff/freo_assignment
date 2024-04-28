@@ -24,7 +24,7 @@ class WikiManager {
               'formatversion': '2',
               'generator': 'search',
               'gsrnamespace': '0',
-              'gsrlimit': '5',
+              'gsrlimit': '10',
               'gsrsearch': query,
               'prop': ['pageimages|pageterms'],
             },

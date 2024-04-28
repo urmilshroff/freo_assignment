@@ -34,7 +34,7 @@ packages:
     source: hosted
     version: "2.1.1"
   cached_network_image:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: cached_network_image
       sha256: "28ea9690a8207179c319965c13cd8df184d5ee721ae2ce60f398ced1219cea1f"
@@ -132,10 +132,11 @@ packages:
   easy_search_bar:
     dependency: "direct main"
     description:
-      name: easy_search_bar
-      sha256: b20343be8ab94ed9e1550cf8cbd5323c344bd9b58b9319fb6e62d75395c0bcaa
-      url: "https://pub.dev"
-    source: hosted
+      path: "."
+      ref: HEAD
+      resolved-ref: "34efd0b3d1d8c465e1aa30470c6c49607b762983"
+      url: "https://github.com/4inka/flutter_easy_search_bar.git"
+    source: git
     version: "2.5.0"
   fake_async:
     dependency: transitive
