@@ -14,27 +14,29 @@ class WikiManager {
     final api = 'https://en.wikipedia.org/w/api.php?';
 
     try {
-      final response = await Dio().get(
-        api,
-        queryParameters: {
-          'action': 'query',
-          'origin': '*',
-          'format': 'json',
-          'generator': 'search',
-          'gsrnamespace': 0,
-          'gsrlimit': 5,
-          'gsrsearch': query,
-        },
+      final response = await Dio().getUri(
+        Uri.parse(api).resolveUri(
+          Uri(
+            queryParameters: {
+              'action': 'query',
+              'origin': '*',
+              'format': 'json',
+              'formatversion': '2',
+              'generator': 'search',
+              'gsrnamespace': '0',
+              'gsrlimit': '5',
+              'gsrsearch': query,
+              'prop': ['pageimages|pageterms'],
+            },
+          ),
+        ),
       );
 
-      final Map<String, dynamic> searchResultsJson =
-          response.data['query']['pages'];
+      final List<dynamic> searchResultsJson = response.data['query']['pages'];
 
       final searchResultsList = List.generate(
         searchResultsJson.length,
-        (i) => SearchResultModel.fromJson(
-          searchResultsJson.values.elementAt(i),
-        ),
+        (i) => SearchResultModel.fromJson(searchResultsJson[i]),
       );
 
       return searchResultsList;
