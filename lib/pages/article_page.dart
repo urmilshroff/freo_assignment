@@ -33,7 +33,13 @@ class ArticlePage extends ConsumerWidget {
           child: HtmlWidget(articleInfo.text),
         ),
         error: (e, s) => Center(child: Text('Error: $e')),
-        loading: () => Center(child: CircularProgressIndicator()),
+        loading: () => Center(
+          child: Image.asset(
+            'assets/animations/loading.gif',
+            width: 120,
+            height: 120,
+          ),
+        ),
       ),
     );
   }

@@ -60,6 +60,11 @@ class SearchPage extends ConsumerWidget {
             ),
           ),
         ),
+        suggestionLoaderBuilder: () => Image.asset(
+          'assets/animations/loading.gif',
+          width: 80,
+          height: 80,
+        ),
       ),
     );
   }
