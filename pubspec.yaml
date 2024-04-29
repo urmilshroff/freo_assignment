@@ -28,3 +28,8 @@ flutter:
   assets:
     - assets/fonts/
     - assets/animations/
+
+  fonts:
+    - family: Merriweather
+      fonts:
+        - asset: assets/fonts/Merriweather/Merriweather-Regular.ttf

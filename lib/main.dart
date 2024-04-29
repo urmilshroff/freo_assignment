@@ -14,12 +14,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'WikiSearch',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.grey,
-          brightness: Brightness.dark,
-        ),
-        useMaterial3: true,
-      ),
+          colorScheme: ColorScheme.fromSeed(
+            seedColor: Colors.grey,
+            brightness: Brightness.dark,
+          ),
+          useMaterial3: true,
+          fontFamily: 'Merriweather'),
       home: SearchPage(),
     );
   }
