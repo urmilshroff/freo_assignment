@@ -1,18 +1,26 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:easy_search_bar/easy_search_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:freo_assignment/pages/article_page.dart';
 import 'package:freo_assignment/providers/wiki_provider.dart';
+import 'package:hive/hive.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class SearchPage extends ConsumerWidget {
-  SearchPage({super.key});
-
+class SearchPage extends HookConsumerWidget {
   final wikiLogo =
       'https://upload.wikimedia.org/wikipedia/commons/8/80/Wikipedia-logo-v2.svg';
 
+  late final Box<dynamic> wikiBox;
+  SearchPage({super.key});
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    useEffect(() {
+      wikiBox = Hive.box(name: 'wikiBox');
+      return null;
+    }, []);
+
     return Scaffold(
       appBar: EasySearchBar(
         title: const Text('WikiSearch'),

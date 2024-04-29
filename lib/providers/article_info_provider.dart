@@ -16,7 +16,7 @@ final articleInfoProvider = FutureProvider.family<ArticleInfoModel, String>((
         'origin': '*',
         'format': 'json',
         'page': articleName,
-        'prop': 'text',
+        'prop': 'text', // html text
         'formatversion': 2,
       },
     );
